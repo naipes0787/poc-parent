@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.6.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>ar.com.wolox</groupId>
+  <artifactId>poc-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+  <name>Basic PoC parent POM</name>
+  <description>Provides a base configuration for some PoC projects</description>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <!-- We can define here the Source Code Management connection -->
+  <!--  <scm>-->
+  <!--    <connection>scm:git:git@github.com...</connection>-->
+  <!--    <developerConnection>scm:git:git@github.com...</developerConnection>-->
+  <!--    <url>...</url>-->
+  <!--    <tag>HEAD</tag>-->
+  <!--  </scm>-->
+
+  <!-- We can define here the issue management -->
+  <!--  <issueManagement>-->
+  <!--    <system>JIRA</system>-->
+  <!--    <url></url>-->
+  <!--  </issueManagement>-->
+
+  <!-- Organization -->
+  <organization>
+    <name>Wolox</name>
+    <url>https://www.wolox.com.ar</url>
+  </organization>
+
+  <!-- Who are the developers? -->
+  <developers>
+    <developer>
+      <id>lcosta</id>
+      <name>Leandro Costa</name>
+      <email>leandro.costa(at)wolox.com</email>
+      <url>https://github.com/naipes0787</url>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <h2.version>1.4.199</h2.version>
+    <postgresql.version>42.2.5</postgresql.version>
+    <modelmapper.version>2.3.3</modelmapper.version>
+    <guava.version>27.0-jre</guava.version>
+  </properties>
+
+  <dependencies>
+    <!-- spring dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <!-- end spring dependencies -->
+
+    <!-- test dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- end test dependencies -->
+
+    <!-- database dependencies -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgresql.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- end database dependencies -->
+
+    <!-- utilities dependencies -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.modelmapper</groupId>
+      <artifactId>modelmapper</artifactId>
+      <version>${modelmapper.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <!-- end utilities dependencies -->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  <modules>
+    <module>util</module>
+  </modules>
+</project>

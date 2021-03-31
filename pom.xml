@@ -61,7 +61,7 @@
     <h2.version>1.4.199</h2.version>
     <postgresql.version>42.2.5</postgresql.version>
     <modelmapper.version>2.3.3</modelmapper.version>
-    <guava.version>27.0-jre</guava.version>
+    <guava.version>29.0-jre</guava.version>
   </properties>
 
   <dependencies>
